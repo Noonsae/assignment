@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,31 +12,36 @@
   <link rel="stylesheet" href="../style/layout.css">
 
 </head>
+
 <body>
   <div class="wrap">
     <header>
-      <!-- logo -->
-      <h1>Noonsae</h1>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Playing</a></li>
-        <li><a href="#">Popular</a></li>
-        <li><a href="#">TopRated</a></li>
-        <li><a href="#">Upcoming</a></li>
-      </ul>
+      <div class="nav">
+        <!-- logo -->
+        <h1>Noonsae</h1>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Playing</a></li>
+          <li><a href="#">Popular</a></li>
+          <li><a href="#">TopRated</a></li>
+          <li><a href="#">Upcoming</a></li>
+        </ul>
+      </div>
 
-      <!-- search_field -->
+      <!-- search-field -->
       <form action="" method="get">
         <fieldset>
           <legend>영화 검색</legend>
           <input type="text" id="movie-search-input" placeholder="검색할 영화를 입력해주세요.">
           <button type="submit">검색하기</button>
         </fieldset>
-      </form>      
+      </form>
     </header>
 
+    <!-- main -->
     <main>
-      <div class="movei-list">
+      <!-- movie-list -->
+      <div class="movie-list">
         <!-- 예시용 카드생성 js설정 이후 삭제-->
         <div class="movie-card"></div>
         <div class="movie-card"></div>
@@ -64,7 +70,8 @@
       <p>Copyright @ 2024 NoonSae All rights reserved.</p>
     </footer>
   </div>
-  
-  
+
+
 </body>
+
 </html>
