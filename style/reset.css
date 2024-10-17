@@ -1,0 +1,48 @@
+/* Reset */
+html {
+  font-size: 0.625em;
+  /* 기준점 :10PX */
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.blind {
+  position: absolute;
+  top: -9999em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+h1 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-indent: -9999px;
+}
+img {
+  border: none;
+}
+/* /Reset */
