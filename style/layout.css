@@ -3,30 +3,138 @@
 /* wrap */
 .wrap {
   width: 68.75%;
-  margin: 0 auto;
+  margin: 0 auto;  
+  /* border: 3px solid #577; */
 }
 
 /* header */
+header {
+  width: 100%;  height: 300px;
+  background-color: #bbb;
+}
+
+/* top */
+.top-area {
+  width: 50%;  height: 80px;
+  padding-left: 10px;
+  
+  display: flex;
+  justify-content: space-between;  
+  flex-direction: row;  
+  align-items: center;  
+}
 /* logo */
-/* nav */
+.logo {
+  font-size: 2em;
+  /* font-family 미설정 */
+}
+/* menu */
+.menu {
+  width: 80%;
+  display: flex;
+  /* border: 2px solid green; */
+
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;
+
+  font-size: 1.5em;
+}
 /* search-field */
+.movie-search-area {    
+  width: 100%;  
+  margin: 50px auto 0;  
+  text-align: center;    
+  /* border: 5px solid red; */
+}
+.movie-search-area h2 {
+  font-size: 2.5em;
+}
+.movie-search-input {
+  margin-top: 20px;  
+  width: 60%; height: 40px;
+
+  border: 1px solid;
+  border-radius: 30px;  
+
+  font-size: 2em;
+  text-align: center;
+}
+.movie-search-btn {
+  width: 80px;  height: 40px;
+  margin-left: 10px;
+  color: #fff;
+  text-indent: 0;  
+  background-color: #333;
+  border-radius: 20px;  
+}
+
 
 /* main */
-/* movie-list */
+main {
+  width: 100%;  
+  padding: 50px 0;
+  background-color: #ddd;  
+}
+/* main > .wrap {
+  border: 1px solid blue;
+} */
+
+/* movie-card-area */
+.movie-card-area {
+  width: 100%;
+  /* border: 1px solid red; */
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.movie-card {
+  width: 230px; height: 350px;  
+  margin-bottom: 20px;
+  padding: 0 10px;
+  /* border: 1px solid red; */
+}
+.movie-card-inner {
+  width: 100%;  height: 100%;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: 1px solid #000; */
+}
+
+.movie-card-inner > img {
+  display: block;
+  width: 100%;
+  height: 80%;
+  border: 1px solid #000;
+}
+.movie-title {
+  font-size: 2.1em;
+  margin: 10px 0 0 10px;
+  /* border: 1px solid #000; */
+}
+.movie-score {
+  font-size: 1.3em;
+  margin: 0 0 10px 10px;
+  /* border: 1px solid #000; */
+}
 
 /* footer */
 footer {
   height: 150px;
-  background-color: #222;  
+  background-color: #111;
   
   display: flex;
   flex-direction: row;
-  align-content: center;
+  justify-content: center;
   align-items: center;
 }
 
-footer p {  
-  width: 100%;
+footer p {    
   color: white;
   font-size: 2em;
   
