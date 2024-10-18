@@ -14,12 +14,12 @@
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
-      <div class="nav">
+  <header>
+    <div class="wrap">
+      <div class="top-area">
         <!-- logo -->
-        <h1>Noonsae</h1>
-        <ul>
+        <h1 class="logo">Noonsae</h1>
+        <ul class="menu">
           <li><a href="#">Home</a></li>
           <li><a href="#">Playing</a></li>
           <li><a href="#">Popular</a></li>
@@ -29,46 +29,46 @@
       </div>
 
       <!-- search-field -->
-      <form action="" method="get">
-        <fieldset>
-          <legend>영화 검색</legend>
-          <input type="text" id="movie-search-input" placeholder="검색할 영화를 입력해주세요.">
-          <button type="submit">검색하기</button>
-        </fieldset>
-      </form>
-    </header>
-
-    <!-- main -->
-    <main>
-      <!-- movie-list -->
-      <div class="movie-list">
-        <!-- 예시용 카드생성 js설정 이후 삭제-->
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
-        <div class="movie-card"></div>
+      <div class="movie-search-area">
+        <h2>찾고 싶은 영화를 검색해주세요.</h2>
+        <input type="text" class="movie-search-input" id="movie-search-input" placeholder="검색할 영화를 입력해주세요.">
+        <button type="submit" class="movie-search-btn">검색하기</button>
       </div>
-    </main>
+    </div>
+  </header>
 
-    <footer>
-      <p>Copyright @ 2024 NoonSae All rights reserved.</p>
-    </footer>
+  <!-- main -->
+  <main>
+    <!-- movie-card-area -->
+    <div class="wrap">
+      <div class="movie-card-area">
+        
+        <!-- 예시용 카드생성 js설정 이후 삭제-->
+        <div class="movie-card">
+          <div class="movie-card-inner">
+            <img src="" alt="movie-image">
+            <h3 class="movie-title">movie-title</h3>
+            <p class="movie-score">movie-score</p>
+          </div>
+        </div>        
+      </div>
+    </div>
+
+    <section>
+      <div class="full-black">
+        <div class="modal">
+          <img src="" alt="movie-image">
+          <h3 class="movie-title">movie-title</h3>
+          <p class="movie-score">movie-score</p>
+          <p class="movie-comment">movie-comment</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Copyright @ 2024 NoonSae All rights reserved.</p>
+  </footer>
   </div>
 
 
