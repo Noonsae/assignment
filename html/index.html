@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>눈새의 개인과제</title>
   <script src="../js/index.js"></script>
-  <script type="module" src="../js/api.js"></script>
+  <script type="module" src="../js/api.js"></script>  
+  <script type="module" src="../js/modal.js"></script>
+  <script type="module" src="../js/bookmarks.js"></script>
   <link rel="stylesheet" href="../style/reset.css">
   <link rel="stylesheet" href="../style/normalize.css">
   <link rel="stylesheet" href="../style/layout.css">
@@ -19,20 +21,18 @@
       <div class="top-area">
         <!-- logo -->
         <h1 class="logo">Noonsae</h1>
-        <ul class="menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Playing</a></li>
-          <li><a href="#">Popular</a></li>
-          <li><a href="#">TopRated</a></li>
-          <li><a href="#">Upcoming</a></li>
+        <ul class="menu" id="topMenu">
+          <li><a id="homeMenu" href="#home">Home</a></li>          
+          <li><a id="playingMenu" href="#playing">Playing</a></li>
+          <li><a id="topRatedMenu" href="#topRated">TopRated</a></li>
+          <li><a id="UpcomingMenu" href="#Upcoming">Upcoming</a></li>
         </ul>
       </div>
 
       <!-- search-field -->
       <div class="movie-search-area">
         <h2>찾고 싶은 영화를 검색해주세요.</h2>
-        <input type="text" class="movie-search-input" id="movie-search-input" placeholder="검색할 영화를 입력해주세요.">
-        <button type="submit" class="movie-search-btn">검색하기</button>
+        <input type="text" class="movie-search-input" id="movieSearchInput" placeholder="검색할 영화를 입력해주세요.">        
       </div>
     </div>
   </header>
@@ -41,38 +41,26 @@
   <main>
     <!-- movie-card-area -->
     <div class="wrap">
-      <div class="movie-card-area">
-        
+      <div class="movie-card-area" id="movieCardArea">
         <!-- 예시용 카드생성 js설정 이후 삭제-->
-        <div class="movie-card">
-          <div class="movie-card-inner">
-            <img src="" alt="movie-image">
-            <h3 class="movie-title">movie-title</h3>
-            <p class="movie-score">movie-score</p>
-          </div>
-        </div>        
       </div>
     </div>
 
     <!-- full-back / modal -->
-    <section class="hide">
-      <div class="full-back">
-        <div class="modal">
-          <img src="" alt="movie-image">
-          <h3 class="movie-title">movie-title</h3>
-          <p class="movie-score">movie-score</p>
-          <p class="movie-comment">movie-comment</p>
-        </div>
+    <div class="full-back hide" id="modalArea">
+      <div class="modal" id="modal">
+        <img id="movieImage" alt="movie-image">
+        <h3 id="movieTitle">영화제목</h3>
+        <p id="ReleaseDate">개봉일 : </p>
+        <p class="movie-score" id="movieScore">평점 : </p>
+        <p id="movieOutline">줄거리</p>
       </div>
-    </section>
+    </div>
   </main>
 
   <footer>
     <p>Copyright @ 2024 NoonSae All rights reserved.</p>
   </footer>
-  </div>
-
-
 </body>
 
 </html>
