@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>눈새의 개인과제</title>
   <script src="../js/index.js"></script>
-  <script src="../js/api.js"></script>
+  <script type="module" src="../js/api.js"></script>
   <link rel="stylesheet" href="../style/reset.css">
   <link rel="stylesheet" href="../style/normalize.css">
   <link rel="stylesheet" href="../style/layout.css">
@@ -54,8 +54,9 @@
       </div>
     </div>
 
-    <section>
-      <div class="full-black">
+    <!-- full-back / modal -->
+    <section class="hide">
+      <div class="full-back">
         <div class="modal">
           <img src="" alt="movie-image">
           <h3 class="movie-title">movie-title</h3>
