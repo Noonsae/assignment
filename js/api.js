@@ -1,9 +1,9 @@
 //  TMDB에서 가져올 정보 정리
 const API_KEY = "26210aab61f4aae375801820bae82a65";
-const NOW_PLAYING_API_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1'`;
-const POPULAR_API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
-const TOP_RATED_API_URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`;
-const UPCOMING_API_URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`;
+const NOW_PLAYING_API_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=ko&page=1'`;
+const POPULAR_API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko&page=1`;
+const TOP_RATED_API_URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=ko&page=1`;
+const UPCOMING_API_URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=ko&page=1`;
 const IMAGE_URL = "https://image.tmdb.org/t/p/w220_and_h330_face";
 
 //  HTML 요소 정리
@@ -11,8 +11,14 @@ const movieCardArea = document.getElementById("movieCardArea");
 const movieCard = document.getElementById("movieCard");
 const movieSearchInput = document.getElementById("movieSearchInput");
 const topMenu = document.getElementById("topMenu");
-
-// -------------------------------------------------------------------
+const modal = document.getElementById('modal');
+const closeBtn = document.getElementById("closeModal");
+const movieImage = document.getElementById("movieImage");
+const movieTitle = document.getElementById("moveTitle");
+const ReleaseDate = document.getElementById("ReleaseDate");
+const movieScore = document.getElementById("movieScore");
+const movieOutline = document.getElementById("movieOutline");
+//-------------------------------------------------------------------
 
 //  1. fetch로 api(popular) 연동하기
 async function fetchMovies(url) {
@@ -33,7 +39,7 @@ function displayMovies(movies) {
     const movieCard = document.createElement("div");
 
     movieCard.innerHTML = `
-      <div class="movie-card" id="movieCard">
+      <div class="movie-card" id="${movie.id}">
         <div class="movie-card-inner">
           <img class="movie-image" src="${
             IMAGE_URL + movie.poster_path
@@ -41,7 +47,7 @@ function displayMovies(movies) {
           <h3 class="movie-title">${movie.title}</h3>          
         <p class="movie-score">평점: ${
           Math.round(movie.vote_average * 10) / 10
-        }</p>        
+        }</p>
         </div>
       </div>        
       `;
@@ -51,7 +57,7 @@ function displayMovies(movies) {
 
 // -------------------------------------------------------------------
 
-// 2. 검색기능 고도화
+//  2. 검색기능 고도화
 movieSearchInput.addEventListener("input", () => {
   const searchTerm = movieSearchInput.value.toLowerCase();
   const searchURL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchTerm}&language=ko`;
@@ -91,7 +97,32 @@ document.addEventListener("DOMContentLoaded", () => {
 // -------------------------------------------------------------------
 
 //  4. 모달창
+//  movie-card 클릭시 모달창 생성
+movieCardArea.addEventListener("click", function (event) {  
+
+  const closestCard = event.target.closest('.movie-card')
+  
+  if (closestCard){
+  modal.classList.remove("hide"); // 클래스 제거
+  }
+});
+//  x표시 누르면 모달창 닫기
+closeBtn.addEventListener("click", function(event){
+  if (event.target === closeBtn){
+    modal.classList.add("hide");
+  }
+});
+// 외부 클릭 시 모달창 닫기
+window.addEventListener("click", function (event) {
+    if (event.target === modal){
+    modal.classList.add("hide");
+  }
+});
+
+
+
 
 // -------------------------------------------------------------------
 
 //  5. 북마크
+//
