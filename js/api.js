@@ -1,6 +1,5 @@
 //  TMDB에서 가져올 정보 정리
 const API_KEY = "26210aab61f4aae375801820bae82a65";
-const DISCOVER_API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=ko&page=1`;
 const NOW_PLAYING_API_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1'`;
 const POPULAR_API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
 const TOP_RATED_API_URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`;
@@ -15,7 +14,7 @@ const topMenu = document.getElementById("topMenu");
 
 // -------------------------------------------------------------------
 
-//  1. fetch로 api(discovery) 연동하기
+//  1. fetch로 api(popular) 연동하기
 async function fetchMovies(url) {
   try {
     const response = await fetch(url);
@@ -26,6 +25,7 @@ async function fetchMovies(url) {
   }
 }
 
+//  가져온 api data를 html에 그리기
 function displayMovies(movies) {
   // 추가 전 영화 목록 삭제
   movieCardArea.innerHTML = "";
@@ -41,7 +41,7 @@ function displayMovies(movies) {
           <h3 class="movie-title">${movie.title}</h3>          
         <p class="movie-score">평점: ${
           Math.round(movie.vote_average * 10) / 10
-        }</p>
+        }</p>        
         </div>
       </div>        
       `;
@@ -59,11 +59,11 @@ movieSearchInput.addEventListener("input", () => {
   if (searchTerm) {
     fetchMovies(searchURL);
   } else {
-    // 검색어가 없으면 Display 영화 표시
-    fetchMovies(DISCOVER_API_URL);
+    // 검색어가 없으면 Popular 영화 표시
+    fetchMovies(POPULAR_API_URL);
   }
 });
-fetchMovies(DISCOVER_API_URL);
+fetchMovies(POPULAR_API_URL);
 
 // -------------------------------------------------------------------
 
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (item.textContent === "Upcoming") {
         fetchMovies(UPCOMING_API_URL);
       } else {
-        fetchMovies(DISCOVER_API_URL);
+        fetchMovies(POPULAR_API_URL);
       }
     });
   });

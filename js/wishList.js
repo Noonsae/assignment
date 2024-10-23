@@ -1,4 +1,4 @@
-//  북마크
+//  wishList
 function BookmarkBtn() {
   let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
   
