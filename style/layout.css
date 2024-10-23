@@ -41,6 +41,9 @@ header {
 
   font-size: 1.5em;
 }
+.menu > li > a:hover {
+  text-decoration: underline;
+}
 /* search-field */
 .movie-search-area {    
   width: 100%;  
@@ -152,7 +155,7 @@ main {
 
 /* modal */
 .modal-content {
-  width: 600px;
+  width: 500px;
   height: 800px;  
   background-color: #fff;
   
@@ -164,6 +167,9 @@ main {
 
   transform: translate(-50%, -50%);  
   overflow: auto;
+
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  
 }
 .modal-content::-webkit-scrollbar {
   display: none;
@@ -172,13 +178,13 @@ main {
   display: block;
   position: absolute;
   top: 20px;  right: 20px;
-  color: #111;  
+  color: #000;  
   font-size: 2.5em;
   font-weight: bold;
 }
 .close-btn:hover,
 .close-btn:focus {
-    color: darkred;
+    color: blue;
     text-decoration: none;
     cursor: pointer;
 }
