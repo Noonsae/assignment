@@ -43,19 +43,20 @@
     <!-- movie-card-area -->
     <div class="wrap">
       <div class="movie-card-area" id="movieCardArea">
-        <!-- 예시용 카드생성 js설정 이후 삭제-->
+        <!-- movie-card 생성 -->
       </div>
     </div>
 
     <!-- full-back / modal -->
     <div class="modal-full-back hide" id="modal">
-      <div class="modal" id="modal">
-        <img id="movieImage" alt="movie-image">
-        <h3 id="movieTitle">영화제목</h3>
-        <p id="ReleaseDate">개봉일 : </p>
+      <div class="modal-content" id="modalContent">
+        <img class="movie-image" id="movieImage" alt="movie-image">
+        <span class="close">&times;</span>
+        <h3 class="movie-title" id="movieTitle">영화제목</h3>
+        <p class="movie-release-date" id="ReleaseDate">개봉일 : </p>
         <p class="movie-score" id="movieScore">평점 : </p>
-        <p id="movieOutline">줄거리</p>
-        <button type="button" id="addWishList" class="hide">찜목록 추가하기</button>
+        <p class="movie-out-line" id="movieOutline">줄거리 : </p>
+        <button type="button" id="addWishList">찜목록 추가하기</button>
         <button type="button" id="removeWishList" class="hide">찜목록 제거하기</button>
       </div>
     </div>

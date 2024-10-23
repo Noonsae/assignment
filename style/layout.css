@@ -146,17 +146,16 @@ main {
   z-index: 1;
 }
 
-.hide {
+/* .hide {
   display: none;
-}
+} */
 
 /* modal */
-.modal {
+.modal-content {
   width: 600px;
   height: 800px;  
   background-color: #fff;
-
-  padding: 40px;
+  
   position: absolute;
 
   border-radius: 10px;
@@ -164,22 +163,43 @@ main {
   top: 50%;  left: 50%;
 
   transform: translate(-50%, -50%);  
-
-    overflow: auto;
-
+  overflow: auto;
 }
-.modal > .movie-image {
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+.close {
   display: block;
-  width: 500px;  height: 600px;
-  border: 1px solid #000;
+  position: absolute;
+  top: 20px;  right: 20px;
+  color: #111;  
+  font-size: 2.5em;
+  font-weight: bold;
 }
-.modal > .movie-title {
+.close:hover,
+.close:focus {
+    color: darkred;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-content > .movie-image {
+  display: block;
+  width: 100%;  height: 600px;
+  /* border: 1px solid #000; */
+  margin: 0;
+  border-radius: 0;
+}
+.modal-content > .movie-title {
   font-size: 3em;
-  margin: 20px 0px;
+  margin: 20px;
 }
-.modal > .movie-score, .movie-outline {
+.modal-content >
+.movie-score,
+.movie-outline,
+.movie-release-date,
+.movie-out-line  {
   font-size: 2em;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 /* footer */
