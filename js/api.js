@@ -60,6 +60,7 @@ function displayMovies(movies) {
     movieCardArea.appendChild(movieCard);
   });
 }
+
 // -------------------------------------------------------------------
 
 //  2. 검색기능 고도화
@@ -144,7 +145,6 @@ window.addEventListener("click", function (event) {
 // -------------------------------------------------------------------
 
 //  5. 북마크
-
 //  1) 찜목록에 추가하기
 addWishListBtn.addEventListener("click", () => {
   let wishMovieList = JSON.parse(localStorage.getItem("wishMovie")) || [];
